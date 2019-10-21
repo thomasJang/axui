@@ -4,11 +4,12 @@ export interface IDataItem {
   changed?: { [key: string]: any };
   selected?: boolean;
 }
-export type IData =
-  | Map<number, IDataItem>
-  | {
-      [key: number]: IDataItem;
-    };
+
+type DataMap = Map<number, IDataItem>;
+interface DataObj {
+  [key: number]: IDataItem;
+}
+export type IData = DataMap | DataObj;
 
 export interface IColumn {
   key?: string;
@@ -34,6 +35,7 @@ export interface IDatagridCommonProps {
 }
 
 export interface IDatagridProps extends IDatagridCommonProps {
+  cssClassName?: string;
   width?: number;
   height?: number;
   columns?: IColumn[];

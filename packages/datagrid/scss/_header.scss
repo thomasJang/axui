@@ -1,0 +1,10 @@
+[role='datagrid-header'] {
+  user-select: none;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border: 0 none;
+  border-bottom: var(--border);
+  color: var(--text-color);
+  z-index: 10;
+}

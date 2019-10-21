@@ -1,3 +1,10 @@
-[data-datagrid-container] {
-  border: 1px solid #ccc;
+.axui--datagrid {
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #ccc;
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --text-color: #222;
+  border: var(--border);
+
+  @import './header';
 }

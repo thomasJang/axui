@@ -4,6 +4,7 @@ import DataContext from '../context/DatagridContext';
 
 const Datagrid: React.FC<IDatagridProps> = props => {
   const [context, setContext] = useState<IDatagridContext>({});
+  const { cssClassName = 'axui--datagrid' } = context;
   const styles: React.CSSProperties = {
     ...props.style,
     width: props.width,
@@ -31,7 +32,7 @@ const Datagrid: React.FC<IDatagridProps> = props => {
 
   return (
     <DataContext.Provider value={[context, setContext]}>
-      <div data-datagrid-container style={styles}>
+      <div className={cssClassName} style={styles}>
         {props.children}
       </div>
     </DataContext.Provider>

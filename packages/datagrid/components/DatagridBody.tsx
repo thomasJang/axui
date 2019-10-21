@@ -5,7 +5,7 @@ const DatagridBody: React.FC = props => {
   const [context, setContext] = useContext(DatagridContext);
   const { data = [], columns = [] } = context;
   return (
-    <div>
+    <div role="datagrid-body">
       {columns.map((column, key) => {
         return (
           <div key={key}>
