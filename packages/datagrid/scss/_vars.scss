@@ -1,0 +1,163 @@
+// palette
+$axgrid-base-color: #fff;
+$axgrid-base-color-1: #fff;
+$axgrid-base-color-2: #f0f0f0;
+$axgrid-base-color-3: #eee;
+$axgrid-base-color-4: #e1e1e1;
+$axgrid-base-color-5: #d6d6d6;
+$axgrid-base-color-6: #ccc;
+$axgrid-base-color-7: #8c8c8c;
+$axgrid-base-color-8: #595959;
+$axgrid-base-color-9: #262626;
+$axgrid-base-color-10: #000;
+
+$axgrid-primary-color: #13c2c2;
+$axgrid-primary-color-1: #e6fffb;
+$axgrid-primary-color-2: #b5f5ec;
+$axgrid-primary-color-3: #87e8de;
+$axgrid-primary-color-4: #5cdbd3;
+$axgrid-primary-color-5: #36cfc9;
+$axgrid-primary-color-6: #13c2c2;
+$axgrid-primary-color-7: #08979c;
+$axgrid-primary-color-8: #006d75;
+$axgrid-primary-color-9: #00474f;
+$axgrid-primary-color-10: #002329;
+
+$axgrid-info-color: #40a9ff;
+$axgrid-processing-color: #f759ab;
+$axgrid-success-color: #73d13d;
+$axgrid-error-color: #ff4d4f;
+$axgrid-point-color: #ff4d4f;
+$axgrid-warning-color: #fadb14;
+$axgrid-disabled-color: rgba(0, 0, 0, 0.35);
+
+$axgrid-text-color: #222;
+$axgrid-text-color-1: #222;
+$axgrid-text-color-2: #222;
+$axgrid-text-color-3: #222;
+$axgrid-text-color-4: #222;
+$axgrid-text-color-5: #222;
+$axgrid-text-color-6: #222;
+$axgrid-text-color-7: #222;
+$axgrid-text-color-8: #222;
+$axgrid-text-color-9: #222;
+$axgrid-text-color-10: #222;
+
+$axgrid-text-color-hover: $axgrid-primary-color-7;
+$axgrid-text-color-active: $axgrid-primary-color-5;
+$axgrid-text-color-disabled: $axgrid-disabled-color;
+
+$axgrid-text-color-secondary: lighten($axgrid-text-color, 5%);
+$axgrid-text-color-secondary-hover: $axgrid-primary-color-7;
+$axgrid-text-color-secondary-active: $axgrid-primary-color-5;
+$axgrid-text-color-secondary-disabled: $axgrid-disabled-color;
+
+$axgrid-text-color-inverted: #fff;
+$axgrid-text-color-inverted-hover: $axgrid-primary-color-3;
+$axgrid-text-color-inverted-active: $axgrid-primary-color-5;
+$axgrid-text-color-inverted-disabled: rgba(255, 255, 255, 0.35);
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//== header
+$axgrid-header-column-color: $axgrid-text-color !default;
+$axgrid-header-column-bg-color: linear-gradient(
+  to top,
+  $axgrid-base-color-1,
+  $axgrid-base-color-2
+) !default;
+$axgrid-header-column-border: $axgrid-border !default;
+$axgrid-header-column-box-shadow: inset 1px 1px 0 0 $axgrid-base-color-1 !default;
+$axgrid-header-column-hover-bg-color: $axgrid-base-color-3 !default;
+$axgrid-header-column-resizer-color: $axgrid-point-color !default;
+$axgrid-header-column-resizer-size: 4px !default;
+$axgrid-header-column-focused-bg-color: linear-gradient(
+  to top,
+  $axgrid-base-color-2,
+  $axgrid-base-color-4
+) !default;
+$axgrid-header-column-focused-color: $axgrid-focused-bg !default;
+$axgrid-header-column-sorter-bg-color: $axgrid-base-color-6 !default;
+
+$axgrid-header-sorter-size: 9px !default;
+$axgrid-header-sorter-color: $axgrid-text-color !default;
+
+//== aside
+$axgrid-aside-border: $axgrid-border !default;
+$axgrid-aside-bg: $axgrid-base-color-3 !default;
+$axgrid-aside-column-box-shadow: inset 1px 1px 0 0 $axgrid-base-color-1 !default;
+$axgrid-aside-column-focused-bg-colors: (
+  $axgrid-base-color-3,
+  $axgrid-base-color-4
+) !default;
+$axgrid-aside-column-focused-color: $axgrid-primary-color-7 !default;
+
+$axgrid-frozen-line-border: $axgrid-border !default;
+
+//== footer
+$axgrid-footer-border: $axgrid-border !default;
+$axgrid-footer-bg-color: linear-gradient(
+  to top,
+  $axgrid-base-color-2,
+  $axgrid-base-color-4
+) !default;
+
+//== scroll
+$axgrid-scroll-track-shadow: $axgrid-base-color-6 !default;
+$axgrid-scroll-track-border: $axgrid-border !default;
+
+$axgrid-scroll-bar-border-radius: 10px !default;
+$axgrid-scroll-bar-border: 0px solid #fff !default;
+$axgrid-scroll-bar-bg-blur: transparent !default;
+$axgrid-scroll-bar-bg: #b9b9b9 !default;
+$axgrid-scroll-bar-hover-border: 0px solid #ccc !default;
+$axgrid-scroll-bar-hover-bg: #888888 !default;
+
+//== body.row
+$axgrid-row-bg-0: #f3f3f3 !default;
+$axgrid-row-bg-1: #fff !default;
+
+$axgrid-added-bg: #fde894 !default;
+$axgrid-added-color: #222 !default;
+$axgrid-updated-bg: #dff0ff !default;
+$axgrid-updated-color: #444 !default;
+$axgrid-deleted-bg: #e6e6e6 !default;
+$axgrid-deleted-color: #888 !default;
+$axgrid-error-bg: #d8b6b6 !default;
+$axgrid-error-color: #222 !default;
+
+//== body.cell
+$axgrid-cell-padding-row-selector: 5px !default;
+$axgrid-cell-padding: 3px 5px !default;
+
+$axgrid-cell-checkbox-border: $axgrid-border !default;
+$axgrid-cell-checkbox-border-radius: 3px !default;
+$axgrid-cell-checkbox-bg-color: linear-gradient(
+  to top,
+  $axgrid-base-color-1,
+  $axgrid-base-color-2
+) !default;
+$axgrid-cell-disable-checkbox-bg-colors: (
+  darken($axgrid-base-color-1, 10%),
+  darken($axgrid-base-color-2, 10%)
+) !default;
+$axgrid-cell-checkbox-arrow-color: $axgrid-primary-color-7 !default;
+
+$axgrid-cell-focused-box-shadow: inset 0px 0px 1px 1px $axgrid-primary-color-7 !default;
+$axgrid-cell-focused-bg: $axgrid-primary-color-5 !default;
+$axgrid-cell-focused-color: #000 !default;
+
+$axgrid-cell-selected-border-color: $axgrid-base-color-6 !default;
+$axgrid-cell-selected-bg: $axgrid-primary-color-3 !default;
+$axgrid-cell-selected-color: #000 !default;
+
+$axgrid-cell-editInput-border: 1px solid $axgrid-info-color !default;
+
+//== resizer
+$axgrid-resizer-color: $axgrid-processing-color !default;
+$axgrid-resizer-size: 2px !default;
+
+//== loader
+$axgrid-loader-bg: rgba(255, 255, 255, 0.85) !default;
+$axgrid-loader-color: rgba(0, 0, 0, 0.1) !default;
+$axgrid-loader-second-color: $axgrid-base-color-7 !default;

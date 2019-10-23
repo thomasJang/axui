@@ -4,7 +4,14 @@
   --border-color: #ccc;
   --border: var(--border-width) var(--border-style) var(--border-color);
   --text-color: #222;
-  border: var(--border);
+  --bg: $axgrid-base-color;
+  --font-size: 12px;
+  --column-border: $axgrid-border-width $axgrid-border-style
+    $axgrid-border-color;
+  --outline: $axgrid-base-color-3 solid 1px;
+}
 
+.axui--datagrid {
+  border: var(--border);
   @import './header';
 }
