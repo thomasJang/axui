@@ -1,0 +1,45 @@
+const PALETTE = {
+  PRIMARY: '#5959f0',
+  PRIMARY_1: '#7171f0',
+  PRIMARY_2: '#8989f0',
+  PRIMARY_3: '#a1a1f0',
+  PRIMARY_4: '#b9b9f0',
+  PRIMARY_5: '#d1d1f0',
+  PRIMARY_SHADE_1: '#4e38e6',
+  PRIMARY_SHADE_2: '#4632cc',
+  PRIMARY_SHADE_3: '#3d2bb3',
+  PRIMARY_SHADE_4: '#342599',
+  PRIMARY_SHADE_5: '#2c1f80',
+  PRIMARY_SHADE_6: '#312677',
+  SECONDARY: '#009bff',
+  SECONDARY_1: '#19a5ff',
+  SECONDARY_2: '#32afff',
+  SECONDARY_3: '#4cb9ff',
+  SECONDARY_4: '#65c3ff',
+  SECONDARY_5: '#7fcdff',
+  FOCUS: '',
+  SUCCESS: '',
+  WARNING: '',
+  HIGHLIGHT: '',
+};
+
+const theme = {
+  heading_font_family: 'sans-serif',
+  primary_color: PALETTE.PRIMARY,
+  primary_color_1: PALETTE.PRIMARY_1,
+  primary_color_2: PALETTE.PRIMARY_2,
+  primary_color_3: PALETTE.PRIMARY_3,
+  primary_color_4: PALETTE.PRIMARY_4,
+  primary_color_5: PALETTE.PRIMARY_5,
+  secondary_color: PALETTE.SECONDARY,
+
+  brand_color: PALETTE.PRIMARY,
+  info_color: PALETTE.FOCUS,
+  success_color: PALETTE.SUCCESS,
+  processing_color: PALETTE.PRIMARY,
+  error_color: PALETTE.WARNING,
+  highlight_color: PALETTE.HIGHLIGHT,
+  warning_color: PALETTE.WARNING,
+};
+
+export default theme;
