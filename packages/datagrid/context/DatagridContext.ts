@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import { IDatagridContext } from '../common/Types';
+import { IDatagridContext } from '../common/@interface';
 
 const initialValues: [
   IDatagridContext,

@@ -46,9 +46,12 @@ const SettingsForm: React.FC<SettingsProps> = props => {
     bodyAlign = 'left',
     scrollLeft = 0,
     scrollTop = 0,
-    showLineNumber = true,
+    enableLineNumber = true,
     lineNumberColumnWidth = 50,
     lineNumberStartAt = 1,
+    enableFrozenCell,
+    frozenColumnIndex,
+    frozenRowIndex,
     columns,
     data,
   } = props;
@@ -89,7 +92,7 @@ const SettingsForm: React.FC<SettingsProps> = props => {
         <Collapse.Panel header="LINE NUMBER" key="LINE_NUMBER">
           <LineNumberSettings
             {...{
-              showLineNumber,
+              enableLineNumber: enableLineNumber,
               lineNumberColumnWidth,
               lineNumberStartAt,
             }}
@@ -98,7 +101,12 @@ const SettingsForm: React.FC<SettingsProps> = props => {
         </Collapse.Panel>
         <Collapse.Panel header="COLUMNS" key="COLUMNS">
           <ColumnsSettings
-            columns={columns}
+            {...{
+              columns,
+              enableFrozenCell,
+              frozenColumnIndex,
+              frozenRowIndex,
+            }}
             handleChangeOption={handleChangeOption}
           />
         </Collapse.Panel>

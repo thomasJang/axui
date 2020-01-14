@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import debounce from 'lodash/debounce';
 import { Datagrid, DatagridHeader, DatagridBody } from '@axui/datagrid';
-import { IData, IColumn } from '@axui/datagrid/common/Types';
+import { IData, IColumn } from '@axui/datagrid/common/@interface';
 import 'styles/global';
 import '@axui/datagrid/scss/style.scss';
 import { LayoutRoot, Nav, ControlBox, Viewer } from 'layouts';
@@ -31,13 +31,16 @@ const Home: React.FC = props => {
   const {
     width = 400,
     height = 300,
-    headerHeight,
+    headerHeight = 30,
     headerAlign,
     bodyRowHeight,
     bodyAlign,
-    showLineNumber,
+    enableLineNumber,
     lineNumberColumnWidth,
     lineNumberStartAt,
+    enableFrozenCell,
+    frozenColumnIndex = 1,
+    frozenRowIndex = 1,
     scrollLeft = 0,
     scrollTop = 0,
     columns,
@@ -62,9 +65,12 @@ const Home: React.FC = props => {
           headerAlign={headerAlign}
           bodyRowHeight={bodyRowHeight}
           bodyAlign={bodyAlign}
-          showLineNumber={showLineNumber}
+          enableLineNumber={enableLineNumber}
           lineNumberColumnWidth={lineNumberColumnWidth}
           lineNumberStartAt={lineNumberStartAt}
+          enableFrozenCell={enableFrozenCell}
+          frozenColumnIndex={frozenColumnIndex}
+          frozenRowIndex={frozenRowIndex}
           scrollLeft={scrollLeft}
           scrollTop={scrollTop}
           columns={columns}

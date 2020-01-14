@@ -19,12 +19,18 @@ const settingsReducer: SettingsReducer = (state, action) => {
       return { ...state, scrollLeft: value };
     case SettingsActionType.SET_SCROLL_TOP:
       return { ...state, scrollTop: value };
-    case SettingsActionType.SET_SHOW_LINENUMBER:
-      return { ...state, showLineNumber: value };
+    case SettingsActionType.SET_ENABLE_LINENUMBER:
+      return { ...state, enableLineNumber: value };
     case SettingsActionType.SET_LINENUMBER_COLUMN_WIDTH:
       return { ...state, lineNumberColumnWidth: value };
     case SettingsActionType.SET_LINENUMBER_START_AT:
       return { ...state, lineNumberStartAt: value };
+    case SettingsActionType.SET_ENABLE_FROZEN_CELL:
+      return { ...state, enableFrozenCell: value };
+    case SettingsActionType.SET_FROZEN_COLUMN_INDEX:
+      return { ...state, frozenColumnIndex: value };
+    case SettingsActionType.SET_FROZEN_ROW_INDEX:
+      return { ...state, frozenRowIndex: value };
     case SettingsActionType.SET_COLUMNS:
       return { ...state, columns: value };
     case SettingsActionType.SET_DATA:

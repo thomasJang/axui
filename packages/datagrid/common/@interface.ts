@@ -50,9 +50,15 @@ export interface IDatagridProps extends IDatagridCommonProps {
   headerAlign?: 'left' | 'center' | 'right';
   bodyRowHeight?: number;
   bodyAlign?: 'left' | 'center' | 'right';
-  showLineNumber?: boolean;
+
+  enableLineNumber?: boolean;
   lineNumberColumnWidth?: number;
   lineNumberStartAt?: number;
+
+  enableFrozenCell?: boolean;
+  frozenColumnIndex?: number;
+  frozenRowIndex?: number;
+
   onScroll?: () => void;
   onClick?: () => void;
 }
@@ -61,7 +67,10 @@ export interface IDatagridHeader extends IDatagridCommonProps {}
 export interface IDatagridBody extends IDatagridCommonProps {}
 
 export interface IDatagridContext extends IDatagridProps {
-  _columns?: IColumn[];
   _scrollLeft?: number;
   _scrollTop?: number;
+  _frozenPanelWidth?: number;
+  _leftColGroup?: IColumn[];
+  _colGroup?: IColumn[];
+  _calcColumnsWidth?: number; // 계산된 컬럼들의 너비 합
 }

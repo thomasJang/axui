@@ -13,5 +13,6 @@
 
 .axui--datagrid {
   border: var(--border);
-  @import './header';
 }
+
+@import './header';

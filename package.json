@@ -4,9 +4,9 @@
   "description": "Javascript UI Components with React",
   "main": "index.js",
   "scripts": {
-    "dev": "start:less-var && next",
-    "build": "start:less-var && next build",
-    "start": "start:less-var && next start",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "start:less-var": "ts-node -P ./tsconfig.dev.json ./scripts/generate-theme.ts"
   },
   "author": "tom@axisj.com",

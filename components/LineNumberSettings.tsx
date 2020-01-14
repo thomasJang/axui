@@ -23,7 +23,7 @@ export interface LineNumberSettingsProps extends FormComponentProps, ISettings {
 const LineNumberSettingsForm: React.FC<LineNumberSettingsProps> = props => {
   const { getFieldDecorator, validateFields, getFieldsValue } = props.form;
   const {
-    showLineNumber = true,
+    enableLineNumber = true,
     lineNumberColumnWidth = 40,
     lineNumberStartAt = 1,
     handleChangeOption,
@@ -33,10 +33,10 @@ const LineNumberSettingsForm: React.FC<LineNumberSettingsProps> = props => {
     <Form layout="vertical" colon={false}>
       <Form.Item label={'showLineNumber'}>
         <Switch
-          defaultChecked={showLineNumber}
+          defaultChecked={enableLineNumber}
           onChange={value =>
             handleChangeOption({
-              type: SettingsActionType.SET_SHOW_LINENUMBER,
+              type: SettingsActionType.SET_ENABLE_LINENUMBER,
               value,
             })
           }

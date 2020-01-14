@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Form, Input, InputNumber, Button, Collapse, Radio } from 'antd';
+import {
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  Collapse,
+  Radio,
+  Switch,
+} from 'antd';
 import { FormComponentProps, FormProps, ValidateCallback } from 'antd/lib/form';
 import {
   ISettings,
@@ -15,7 +23,13 @@ export interface ColumnsSettingsProps extends FormComponentProps, ISettings {
 
 const ColumnsSettingsForm: React.FC<ColumnsSettingsProps> = props => {
   const { getFieldDecorator, validateFields, getFieldsValue } = props.form;
-  const { columns, handleChangeOption } = props;
+  const {
+    columns,
+    handleChangeOption,
+    enableFrozenCell,
+    frozenColumnIndex = 1,
+    frozenRowIndex = 1,
+  } = props;
 
   return (
     <Form layout="vertical" colon={false}>
@@ -50,6 +64,41 @@ const ColumnsSettingsForm: React.FC<ColumnsSettingsProps> = props => {
             Apply
           </Button>
         </div>
+      </Form.Item>
+      <Form.Item label={'enableFrozenCell'}>
+        <Switch
+          defaultChecked={enableFrozenCell}
+          onChange={value =>
+            handleChangeOption({
+              type: SettingsActionType.SET_ENABLE_FROZEN_CELL,
+              value,
+            })
+          }
+        />
+      </Form.Item>
+      <Form.Item label={'frozenColumnIndex'}>
+        <InputNumber
+          size="small"
+          defaultValue={frozenColumnIndex}
+          onChange={value => {
+            handleChangeOption({
+              type: SettingsActionType.SET_FROZEN_COLUMN_INDEX,
+              value,
+            });
+          }}
+        />
+      </Form.Item>
+      <Form.Item label={'frozenRowIndex'}>
+        <InputNumber
+          size="small"
+          defaultValue={frozenRowIndex}
+          onChange={value => {
+            handleChangeOption({
+              type: SettingsActionType.SET_FROZEN_ROW_INDEX,
+              value,
+            });
+          }}
+        />
       </Form.Item>
     </Form>
   );

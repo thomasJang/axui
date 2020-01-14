@@ -55,7 +55,7 @@ const BaseSettingsForm: React.FC<BaseSettingsProps> = props => {
       <Form.Item label={'headerHeight'}>
         <InputNumber
           size="small"
-          min={100}
+          min={10}
           defaultValue={headerHeight}
           onChange={value => {
             handleChangeOption({
@@ -84,7 +84,7 @@ const BaseSettingsForm: React.FC<BaseSettingsProps> = props => {
       <Form.Item label={'bodyRowHeight'}>
         <InputNumber
           size="small"
-          min={100}
+          min={10}
           defaultValue={bodyRowHeight}
           onChange={value => {
             handleChangeOption({

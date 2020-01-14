@@ -1,4 +1,4 @@
-import { IData, IColumn } from '@axui/datagrid/common/Types';
+import { IData, IColumn } from '@axui/datagrid/common/@interface';
 
 export interface ISettings {
   width?: number;
@@ -13,9 +13,13 @@ export interface ISettings {
   scrollLeft?: number;
   scrollTop?: number;
 
-  showLineNumber?: boolean;
+  enableLineNumber?: boolean;
   lineNumberColumnWidth?: number;
   lineNumberStartAt?: number;
+
+  enableFrozenCell?: boolean;
+  frozenColumnIndex?: number;
+  frozenRowIndex?: number;
 }
 
 export enum SettingsActionType {
@@ -27,9 +31,12 @@ export enum SettingsActionType {
   SET_BODY_ALIGN = 'bodyAlign',
   SET_SCROLL_LEFT = 'scrollLeft',
   SET_SCROLL_TOP = 'scrollTop',
-  SET_SHOW_LINENUMBER = 'showLineNumber',
+  SET_ENABLE_LINENUMBER = 'enableLineNumber',
   SET_LINENUMBER_COLUMN_WIDTH = 'lineNumberColumnWidth',
   SET_LINENUMBER_START_AT = 'lineNumberStartAt',
+  SET_ENABLE_FROZEN_CELL = 'enableFrozenCell',
+  SET_FROZEN_COLUMN_INDEX = 'frozenColumnIndex',
+  SET_FROZEN_ROW_INDEX = 'frozenRowIndex',
   SET_COLUMNS = 'columns',
   SET_DATA = 'data',
 }
