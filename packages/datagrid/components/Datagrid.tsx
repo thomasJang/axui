@@ -16,6 +16,7 @@ const Datagrid: React.FC<IDatagridProps> = props => {
   useEffect(() => {
     // make new context
     const nextCtx: IDatagridContext = {
+      ...ctx,
       ...props,
       _scrollLeft: 0,
       _scrollTop: 0,
@@ -26,11 +27,10 @@ const Datagrid: React.FC<IDatagridProps> = props => {
       ctx.enableFrozenCell !== nextCtx.enableFrozenCell ||
       ctx.frozenColumnIndex !== nextCtx.frozenColumnIndex
     ) {
-      console.log('getCTXData by columns');
       const {
         _leftColGroup,
         _colGroup,
-        _calcColumnsWidth,
+        _totalWidthOfColumns,
       } = getCTXDataByColumns(nextCtx.columns, {
         containerWidth: nextCtx.width || 0,
         enableFrozenCell: nextCtx.enableFrozenCell,
@@ -38,7 +38,13 @@ const Datagrid: React.FC<IDatagridProps> = props => {
       });
       nextCtx._leftColGroup = _leftColGroup;
       nextCtx._colGroup = _colGroup;
-      nextCtx._calcColumnsWidth = _calcColumnsWidth;
+      nextCtx._totalWidthOfColumns = _totalWidthOfColumns;
+      console.log(
+        'getCTXData by columns',
+        _leftColGroup,
+        _colGroup,
+        _totalWidthOfColumns,
+      );
     }
     if (ctx.data !== nextCtx.data) {
       console.log('changed or init data');

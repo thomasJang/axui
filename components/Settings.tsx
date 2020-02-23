@@ -46,7 +46,7 @@ const SettingsForm: React.FC<SettingsProps> = props => {
     bodyAlign = 'left',
     scrollLeft = 0,
     scrollTop = 0,
-    enableLineNumber = true,
+    enableLineNumber = false,
     lineNumberColumnWidth = 50,
     lineNumberStartAt = 1,
     enableFrozenCell,

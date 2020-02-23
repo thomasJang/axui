@@ -23,7 +23,7 @@ export interface LineNumberSettingsProps extends FormComponentProps, ISettings {
 const LineNumberSettingsForm: React.FC<LineNumberSettingsProps> = props => {
   const { getFieldDecorator, validateFields, getFieldsValue } = props.form;
   const {
-    enableLineNumber = true,
+    enableLineNumber = false,
     lineNumberColumnWidth = 40,
     lineNumberStartAt = 1,
     handleChangeOption,

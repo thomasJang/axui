@@ -72,5 +72,5 @@ export interface IDatagridContext extends IDatagridProps {
   _frozenPanelWidth?: number;
   _leftColGroup?: IColumn[];
   _colGroup?: IColumn[];
-  _calcColumnsWidth?: number; // 계산된 컬럼들의 너비 합
+  _totalWidthOfColumns?: number; // 계산된 컬럼들의 너비 합
 }

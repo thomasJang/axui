@@ -13,7 +13,7 @@ function getCTXDataByColumns(
   const _leftColGroup: IDatagridContext['columns'] = [];
   const _colGroup: IDatagridContext['columns'] = [];
   const columnMinWidth = 100;
-  let _calcColumnsWidth = 0;
+  let _totalWidthOfColumns = 0;
 
   if (columns) {
     const { enableFrozenCell, frozenColumnIndex = 0, containerWidth } = options;
@@ -23,15 +23,15 @@ function getCTXDataByColumns(
     const _columns = columns.map((column, ci) => {
       const _column = { ...column };
       if (_column.width === undefined) {
-        _calcColumnsWidth += _column._width = columnMinWidth;
+        _totalWidthOfColumns += _column._width = columnMinWidth;
       } else if (typeof _column.width === 'number') {
-        _calcColumnsWidth += _column._width = Number(_column.width);
+        _totalWidthOfColumns += _column._width = Number(_column.width);
       } else if (_column.width === '*') {
         autoWidthColGroupIndexes.push(ci);
       } else if (
         ('' + _column.width).substring(('' + _column.width).length - 1) === '%'
       ) {
-        _calcColumnsWidth += _column._width =
+        _totalWidthOfColumns += _column._width =
           (containerWidth *
             Number(
               ('' + _column.width).substring(
@@ -47,7 +47,8 @@ function getCTXDataByColumns(
 
     if (autoWidthColGroupIndexes.length > 0) {
       computedWidth =
-        (containerWidth - _calcColumnsWidth) / autoWidthColGroupIndexes.length;
+        (containerWidth - _totalWidthOfColumns) /
+        autoWidthColGroupIndexes.length;
       for (let i = 0, l = autoWidthColGroupIndexes.length; i < l; i++) {
         _columns[autoWidthColGroupIndexes[i]]._width =
           computedWidth < columnMinWidth ? columnMinWidth : computedWidth;
@@ -77,7 +78,7 @@ function getCTXDataByColumns(
   }
 
   return {
-    _calcColumnsWidth,
+    _totalWidthOfColumns,
     _leftColGroup,
     _colGroup,
   };
