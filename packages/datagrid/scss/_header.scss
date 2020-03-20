@@ -8,3 +8,15 @@
   color: var(--text-color);
   z-index: 10;
 }
+
+.axui--datagrid--header--aside__panel {
+  overflow: hidden;
+  border-right: var(--border);
+}
+.axui--datagrid--header--left_panel {
+}
+.axui--datagrid--header--main__panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
