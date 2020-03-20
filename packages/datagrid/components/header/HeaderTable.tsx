@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import DatagridContext from '../context/DatagridContext';
-import { IColumn } from '../common/@interface';
+import DatagridContext from '../../context/DatagridContext';
+import { IColumn } from '../../common/@interface';
 
 interface IProps {
   columns: IColumn[];
 }
-const DatagridHeaderTable: React.FC<IProps> = ({ columns }) => {
+const HeaderTable: React.FC<IProps> = ({ columns }) => {
   return (
     <table>
       <colgroup>
@@ -22,4 +22,4 @@ const DatagridHeaderTable: React.FC<IProps> = ({ columns }) => {
   );
 };
 
-export default DatagridHeaderTable;
+export default HeaderTable;

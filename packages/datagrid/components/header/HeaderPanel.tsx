@@ -5,8 +5,8 @@ interface IProps {
   panelName: string;
   style?: React.CSSProperties;
 }
-const DatagridHeaderPanel: React.FC<IProps> = () => {
+const HeaderPanel: React.FC<IProps> = () => {
   return <>HeaderPanel</>;
 };
 
-export default DatagridHeaderPanel;
+export default HeaderPanel;

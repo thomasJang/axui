@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import DatagridContext from '../context/DatagridContext';
-import DatagridHeaderTable from './DatagridHeaderTable';
+import DatagridContext from '../../context/DatagridContext';
+import HeaderTable from './HeaderTable';
 
 interface IProps {}
-const DatagridHeaderMainPanel: React.FC<IProps> = ({}) => {
+const HeaderMainPanel: React.FC<IProps> = ({}) => {
   const [context] = useContext(DatagridContext);
   const { _colGroup } = context;
 
@@ -12,9 +12,9 @@ const DatagridHeaderMainPanel: React.FC<IProps> = ({}) => {
   }
   return (
     <div className="axui--datagrid--header--main__panel">
-      <DatagridHeaderTable columns={_colGroup} />
+      <HeaderTable columns={_colGroup} />
     </div>
   );
 };
 
-export default DatagridHeaderMainPanel;
+export default HeaderMainPanel;
