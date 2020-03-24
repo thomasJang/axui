@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import DatagridContext from '../../context/DatagridContext';
 
-interface IProps {}
-const HeaderAsidePanel: React.FC<IProps> = ({}) => {
+interface IProps {
+  containerHeight: number;
+}
+const HeaderAsidePanel: React.FC<IProps> = ({ containerHeight }) => {
   const [context] = useContext(DatagridContext);
   const { enableLineNumber, lineNumberColumnWidth } = context;
 

@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import DatagridContext from '../../context/DatagridContext';
 import HeaderTable from './HeaderTable';
 
-interface IProps {}
-const HeaderLeftPanel: React.FC<IProps> = ({}) => {
+interface IProps {
+  containerHeight: number;
+}
+const HeaderLeftPanel: React.FC<IProps> = ({ containerHeight }) => {
   const [context] = useContext(DatagridContext);
   const { _leftColGroup } = context;
 
@@ -13,7 +15,7 @@ const HeaderLeftPanel: React.FC<IProps> = ({}) => {
 
   return (
     <div className="axui--datagrid--header--left_panel">
-      <HeaderTable columns={_leftColGroup} />
+      <HeaderTable columns={_leftColGroup} height={containerHeight} />
     </div>
   );
 };

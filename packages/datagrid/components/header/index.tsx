@@ -1,20 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useLayoutEffect, useEffect } from 'react';
 import DatagridContext from '../../context/DatagridContext';
 import { IDatagridHeader } from '../../common/@interface';
 import HeaderAsidePanel from './HeaderAsidePanel';
 import HeaderLeftPanel from './HeaderLeftPanel';
 import HeaderMainPanel from './HeaderMainPanel';
+import useIsomorphicLayoutEffect from '../../common/useIsomorphicLayoutEffect';
 
 const DatagridHeader: React.FC<IDatagridHeader> = props => {
   const [context, setContext] = useContext(DatagridContext);
   const { headerHeight = 30 } = context;
   const styles = { ...props.style, height: headerHeight };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerHeight, setContainerHeight] = React.useState<
+    number | undefined
+  >(undefined);
+
+  useIsomorphicLayoutEffect(() => {
+    if (!containerRef.current) {
+      return;
+    }
+    setContainerHeight(containerRef.current.clientHeight);
+  }, []);
 
   return (
-    <div style={styles} className="axui--datagrid--header">
-      <HeaderAsidePanel />
-      <HeaderLeftPanel />
-      <HeaderMainPanel />
+    <div ref={containerRef} style={styles} className="axui--datagrid--header">
+      {containerHeight !== undefined && (
+        <>
+          <HeaderAsidePanel containerHeight={containerHeight} />
+          <HeaderLeftPanel containerHeight={containerHeight} />
+          <HeaderMainPanel containerHeight={containerHeight} />
+        </>
+      )}
     </div>
   );
 };

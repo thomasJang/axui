@@ -3,9 +3,10 @@ import DatagridContext from '../../context/DatagridContext';
 import { IColumn } from '../../common/@interface';
 
 interface IProps {
+  height: number;
   columns: IColumn[];
 }
-const HeaderTable: React.FC<IProps> = ({ columns }) => {
+const HeaderTable: React.FC<IProps> = ({ height, columns }) => {
   return (
     <table>
       <colgroup>
@@ -13,11 +14,15 @@ const HeaderTable: React.FC<IProps> = ({ columns }) => {
           <col key={ci} style={{ width: col._width }} />
         ))}
       </colgroup>
-      <tr>
-        {columns.map((col, ci) => (
-          <td key={ci}>{col.label}</td>
-        ))}
-      </tr>
+      <tbody>
+        <tr>
+          {columns.map((col, ci) => (
+            <td key={ci} style={{ height }}>
+              {col.label}
+            </td>
+          ))}
+        </tr>
+      </tbody>
     </table>
   );
 };
