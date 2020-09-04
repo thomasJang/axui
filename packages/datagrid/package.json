@@ -15,7 +15,7 @@
   "devDependencies": {
     "better-npm-run": "^0.1.0",
     "ncp": "^2.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "rimraf": "^3.0.0",
     "typescript": "^3.6.2"
   },
